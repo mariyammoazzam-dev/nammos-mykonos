@@ -1,0 +1,1008 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.nammos-page {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+}
+
+
+/* ================= HEADER ================= */
+
+.nammos-header {
+  width: 100%;
+  height: 125px;
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 55px;
+
+  position: relative;
+  z-index: 20;
+}
+
+
+/* LOGO */
+
+.nammos-logo {
+  font-family: Arial, sans-serif;
+
+  font-size: 48px;
+  font-weight: 900;
+
+  letter-spacing: -4px;
+
+  color: #111;
+
+  cursor: pointer;
+}
+
+
+/* HEADER RIGHT */
+
+.nammos-header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 45px;
+}
+
+
+/* BOOK BUTTON */
+
+.book-btn {
+  width: 220px;
+  height: 58px;
+
+  background: white;
+
+  border: 1px solid #111;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+}
+
+
+/* BOOK ARROW */
+
+.book-arrow {
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+
+/* HAMBURGER */
+
+.nammos-hamburger {
+  width: 45px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+
+  cursor: pointer;
+}
+
+.nammos-hamburger span {
+  width: 45px;
+  height: 2px;
+
+  background: #111;
+
+  display: block;
+}
+
+
+/* ================= SLIDER ================= */
+
+.nammos-slider {
+  width: 100%;
+
+  height: calc(100vh - 125px);
+
+  min-height: 600px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #222;
+}
+
+
+/* IMAGE */
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  animation: imageAnimation 1.2s ease;
+}
+
+
+@keyframes imageAnimation {
+
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* OVERLAY */
+
+.slider-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.08) 50%,
+    rgba(0, 0, 0, 0.45)
+  );
+
+  pointer-events: none;
+}
+
+
+/* ================= CENTER TEXT ================= */
+
+.slider-content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  color: white;
+
+  z-index: 3;
+
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+.slider-content h1 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(55px, 7vw, 105px);
+
+  font-weight: 400;
+
+  letter-spacing: 12px;
+}
+
+
+.slider-content p {
+  margin: 15px 0 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+
+  letter-spacing: 12px;
+}
+
+
+/* ================= ARROWS ================= */
+
+.slider-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  border: 1px solid white;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition: all 0.3s ease;
+}
+
+
+.slider-arrow:hover {
+  background: white;
+
+  color: #111;
+
+  transform: translateY(-50%) scale(1.08);
+}
+
+
+.slider-prev {
+  left: 45px;
+}
+
+
+.slider-next {
+  right: 45px;
+}
+
+
+/* ================= DOTS ================= */
+
+.slider-dots {
+  position: absolute;
+
+  bottom: 92px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  z-index: 6;
+}
+
+
+.dot {
+  width: 13px;
+  height: 13px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  border: 1px solid white;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+
+.dot.active {
+  background: white;
+
+  transform: scale(1.15);
+}
+
+
+/* ================= WHITE LINE ================= */
+
+.slider-line {
+  position: absolute;
+
+  left: 4%;
+
+  right: 4%;
+
+  bottom: 67px;
+
+  height: 1px;
+
+  background: white;
+
+  z-index: 5;
+}
+
+
+/* ================= DESTINATIONS =================*/
+
+.destination-wrapper {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  height: 67px;
+
+  overflow: hidden;
+
+  z-index: 5;
+}
+
+
+.destination-track {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  width: max-content;
+
+  animation: destinationMove 25s linear infinite;
+}
+
+
+.destination {
+  display: flex;
+
+  align-items: center;
+
+  gap: 100px;
+
+  margin-right: 100px;
+
+  color: white;
+
+  font-family: Georgia, serif;
+
+  font-size: 21px;
+
+  letter-spacing: 6px;
+
+  white-space: nowrap;
+}
+
+
+.destination i {
+  width: 45px;
+
+  height: 1px;
+
+  background: white;
+
+  display: block;
+}
+
+
+@keyframes destinationMove {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .nammos-header {
+    height: 100px;
+
+    padding: 0 25px;
+  }
+
+  .nammos-logo {
+    font-size: 36px;
+  }
+
+  .nammos-header-right {
+    gap: 20px;
+  }
+
+  .book-btn {
+    width: 160px;
+
+    height: 50px;
+
+    font-size: 14px;
+  }
+
+  .nammos-slider {
+    height: calc(100vh - 100px);
+  }
+
+  .slider-content h1 {
+    font-size: 55px;
+
+    letter-spacing: 7px;
+  }
+
+  .slider-content p {
+    font-size: 20px;
+
+    letter-spacing: 7px;
+  }
+
+  .slider-prev {
+    left: 20px;
+  }
+
+  .slider-next {
+    right: 20px;
+  }
+
+  .slider-arrow {
+    width: 52px;
+    height: 52px;
+
+    font-size: 25px;
+  }
+
+  .destination {
+    font-size: 16px;
+
+    gap: 50px;
+
+    margin-right: 50px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .nammos-header {
+    height: 80px;
+  }
+
+  .nammos-logo {
+    font-size: 30px;
+  }
+
+  .book-btn {
+    width: 120px;
+
+    height: 43px;
+
+    padding: 0 12px;
+
+    font-size: 12px;
+  }
+
+  .nammos-hamburger,
+  .nammos-hamburger span {
+    width: 32px;
+  }
+
+  .nammos-hamburger {
+    gap: 8px;
+  }
+
+  .nammos-slider {
+    height: calc(100vh - 80px);
+
+    min-height: 550px;
+  }
+
+  .slider-content h1 {
+    font-size: 42px;
+
+    letter-spacing: 5px;
+  }
+
+  .slider-content p {
+    font-size: 16px;
+
+    letter-spacing: 5px;
+  }
+
+  .slider-arrow {
+    width: 45px;
+    height: 45px;
+  }
+
+  .slider-prev {
+    left: 12px;
+  }
+
+  .slider-next {
+    right: 12px;
+  }
+
+  .slider-dots {
+    bottom: 92px;
+
+    gap: 10px;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .destination {
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    gap: 35px;
+
+    margin-right: 35px;
+  }
+
+  .destination i {
+    width: 25px;
+  }
+}
+
+.nammos-header-right {
+  position: relative;
+}
+
+.book-dropdown {
+  position: absolute;
+  top: 80px;
+  right: 70px;
+  width: 320px;
+  background: white;
+  border: 1px solid #000;
+  z-index: 999;
+}
+
+.book-dropdown div {
+  padding: 18px 25px;
+  border-bottom: 1px solid #e5e5e5;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.book-dropdown div:hover {
+  background: #f5f5f5;
+}
+
+.welcome-section {
+  width: 88%;
+  margin:120px auto 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 150px;
+}
+
+.welcome-image {
+  flex:0 0 48%;
+}
+
+.welcome-image img {
+  width: 100%;
+  max-width: 650px;
+  height: 550px;
+  object-fit: cover;
+}
+
+.welcome-content {
+  max-width: 900px;
+  margin:  0 auto;
+}
+
+.welcome-content h1 {
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 0.95;
+  color: #1f1a36;
+  margin-bottom: 35px;
+  max-width:380px;
+}
+
+.welcome-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #222;
+  max-width: 900px;
+}
+/* Gastronomy Section */
+
+.gastronomy-section {
+  width: 88%;
+  margin-bottom: 3px auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.gastronomy-content {
+  flex: 0 0 40%;
+  padding-left:30px ;
+  
+}
+
+.gastronomy-content h1 {
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 0.95;
+  color: #1f1a36;
+  margin-bottom: 35px;
+}
+
+.gastronomy-content p {
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #222;
+}
+
+.gastronomy-image {
+  flex: 0 0 48%;
+  margin-left: auto;
+}
+
+.gastronomy-image img {
+  width: 100%;
+  height: 550px;
+  object-fit: contain;
+  object-position:center ;
+  display: block;
+}
+
+  .luxury-section {
+  width: 88%;
+  margin-top: 3px auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.luxury-image {
+  flex: 0 0 48%;
+  margin-left:20px;
+}
+
+.luxury-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.luxury-content {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.luxury-content h1 {
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 0.95;
+  color: #1f1a36;
+  margin-bottom: 35px;
+}
+
+.luxury-content p {
+  max-width: 550px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #222;
+}
+
+/* ========================= */
+/* DESTINATIONS */
+/* ========================= */
+
+.destinations-section {
+  width: 100%;
+  margin-top: 80px;
+  padding-bottom: 120px;
+}
+
+.destinations-line {
+  width: 100%;
+  height: 2px;
+  background: #111;
+  margin-bottom: 50px;
+}
+
+.destinations-title {
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: 60px;
+  text-transform: uppercase;
+  color: #111;
+  margin-left: 6%;
+  margin-bottom: 20px;
+}
+
+.world-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.world-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 700px;
+  margin:  80px auto;
+}
+
+.world-map {
+  position: absolute;
+  width: 70%;
+  left:50%;
+  bottom: 0;
+  transform:translateX(-50%) ;
+  opacity: 0.25;
+  
+}
+
+/* circles */
+
+.destination {
+  position: absolute;
+  text-align: center;
+  animation: floatCircle 4s ease-in-out infinite;
+}
+
+.destination span {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #111;
+}
+
+.destination-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.destination-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* positions */
+
+
+
+.destination-london {
+  top: 22%;
+  left: 44%;
+}
+
+.destination-cannes {
+  top: 34%;
+  left: 48%;
+}
+
+.destination-limassol {
+  top: 30%;
+  left: 58%;
+}
+
+.destination-dubai {
+  top: 46%;
+  left: 60%;
+}
+
+.destination-sardinia {
+  top: 48%;
+  left: 46%;
+}
+
+.destination-montenegro {
+  top: 44%;
+  left: 54%;
+}
+/* animation */
+
+.destination:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.destination:nth-child(2) {
+  animation-delay: .5s;
+}
+
+.destination:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.destination:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.destination:nth-child(5) {
+  animation-delay: 2s;
+}
+
+.destination:nth-child(6) {
+  animation-delay: 2.5s;
+}
+
+.destination:nth-child(7) {
+  animation-delay: 3s;
+}
+
+@keyframes floatCircle {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+
+.destinations-bottom-line {
+  width: 100%;
+  height: 1px;
+  background: #111;
+  margin-top: 100px;
+}
+
+.newsletter-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:40px 60px;
+}
+
+.newsletter-logo{
+  width:120px;
+}
+
+.newsletter-actions{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.book-now-btn{
+  background:white;
+  border:1px solid #000;
+  padding:12px 35px;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.hamburger{
+  font-size:32px;
+  cursor:pointer;
+}
+
+.newsletter-section{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:80px 60px;
+}
+
+.newsletter-left,
+.newsletter-center,
+.newsletter-right{
+  flex:1;
+}
+
+.newsletter-left p,
+.newsletter-right p{
+  margin:12px 0;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.newsletter-center{
+  text-align:center;
+}
+
+.newsletter-image{
+  display:flex;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.newsletter-image img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.newsletter-center h2{
+  margin-bottom:30px;
+  font-size:32px;
+  font-weight:400;
+}
+
+.newsletter-input{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.newsletter-input input{
+  border:none;
+  border-bottom:1px solid #000;
+  width:300px;
+  padding:10px;
+  outline:none;
+}
+
+.newsletter-input button{
+  border:none;
+  background:none;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.newsletter-right{
+  text-align:right;
+}
+
+.newsletter-footer{
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  margin-bottom:50px;
+  font-size:14px;
+}

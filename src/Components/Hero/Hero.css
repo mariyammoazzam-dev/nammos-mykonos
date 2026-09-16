@@ -1,0 +1,26 @@
+.hero {
+  height: 100vh;
+  background-image: url("../../assets/beach.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  text-align: center;
+  color: white;
+  width: 70%;
+}
+
+.overlay h1 {
+  font-size: 90px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.overlay p {
+  font-size: 24px;
+  line-height: 1.8;
+}

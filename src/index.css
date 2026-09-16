@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+h1 {
+  color: black;
+  font-size: 50px;
+}

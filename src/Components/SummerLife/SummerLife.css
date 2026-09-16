@@ -1,0 +1,136 @@
+.summer-life {
+  width: 100%;
+  background: white;
+}
+
+.summer-title {
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 25px;
+  box-sizing: border-box;
+}
+
+.summer-title h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.summer-slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.summer-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  animation: slideImage 1.2s ease;
+}
+
+@keyframes slideImage {
+  from {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Previous button */
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 55px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Left arrow */
+.prev-btn {
+  left: 30px;
+}
+
+/* Right arrow */
+.next-btn {
+  right: 30px;
+}
+
+/* 1 / 10 */
+.slide-number {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.moving-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  display: flex;
+  width: max-content;
+
+  animation: moveText 15s linear infinite;
+
+  z-index: 5;
+}
+
+.moving-text span {
+  color: white;
+  font-size: 55px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  white-space: nowrap;
+  padding-right: 100px;
+}
+
+@keyframes moveText {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.statement-text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+
+  width: 350px;
+
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.4;
+
+  text-align: left;
+  z-index: 4;
+}

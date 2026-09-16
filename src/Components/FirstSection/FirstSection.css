@@ -1,0 +1,17 @@
+.first-section {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 24px;
+  background: white;
+}
+
+.first-section h1 {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}

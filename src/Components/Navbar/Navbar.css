@@ -1,0 +1,39 @@
+.navbar {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.center-title {
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.menu-icon {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.reservation-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.reservation-btn {
+  padding: 18px 45px;
+  font-size: 22px;
+  border: 2px solid black;
+  background: white;
+  cursor: pointer;
+}
